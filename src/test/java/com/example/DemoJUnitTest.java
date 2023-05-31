@@ -1,43 +1,42 @@
-package com.demoqa;
+package com.example;
 
-import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.*;
 
 public class DemoJUnitTest {
 
     @BeforeAll
-    static void BeforeAll() {
+    static void beforeAll() {
         System.out.println("#### @BeforeAll");
 //        Configuration.browser = "chrome";
     }
 
     @AfterAll
-    static void AfterAll() {
+    static void afterAll() {
         System.out.println("#### @AfterAll");
 //        Configuration.browser = "chrome";
     }
 
     @BeforeEach
-    void BeforeEach() {
+    void beforeEach() {
         System.out.println("    #### @BeforeEach");
         Calculator calc = new Calculator();
     }
 
     @AfterEach
-    void AfterEach() {
+    void afterEach() {
         System.out.println("    #### @AfterEach");
     }
 
     @Test
-    void FirstTest() {
+    void firstTest() {
         System.out.println("    #### @Test FirstTest");
         Calculator calc = new Calculator();
-        int result = calc.summ(2, 2);
+        int result = calc.sum(2, 2);
         Assertions.assertTrue(result == 4);
     }
 
     @Test
-    void SecondTest() {
+    void secondTest() {
         System.out.println("    #### @Test SecondTest");
         Calculator calc = new Calculator();
         int result = calc.mult(2, 2);
